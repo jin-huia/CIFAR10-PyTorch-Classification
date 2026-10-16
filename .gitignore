@@ -1,0 +1,26 @@
+# Python缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 数据集文件夹
+data/
+datasets/
+
+# 模型权重
+*.pth
+*.pt
+
+# vscode本地配置
+.vscode/
+.idea/
+
+# 虚拟环境
+venv/
+.conda/
+env/
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db
