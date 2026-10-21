@@ -45,8 +45,13 @@ def main():
     criterion = get_loss_fn()
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
-    from torch.optim.lr_scheduler import StepLR
-    scheduler = StepLR(optimizer, step_size=5, gamma=0.5)
+    # 优化器
+    optimizer = torch.optim.SGD(model.parameters(), lr=1e-2, momentum=0.9, weight_decay=5e-4)
+
+    # 学习率调度器
+    from torch.optim.lr_scheduler import CosineAnnealingLR
+    scheduler = CosineAnnealingLR(optimizer, T_max=160) 
+
 
     train_acc_list = []
     val_acc_list = []
